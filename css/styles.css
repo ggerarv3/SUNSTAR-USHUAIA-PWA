@@ -1,15 +1,24 @@
-/* Estilos Generales */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #55365F;
-  color: #fff;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: linear-gradient(to bottom, #1E0F31, #2C1A4C);
+  color: #ffffff;
 }
 
+h1, h2 {
+  color: #ffffff;
+}
+
+button {
+  background-color: #6A3BA8;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #5A2D91;
+}
 /* Encabezado */
 header {
   display: flex;
@@ -130,7 +139,7 @@ footer {
   /* Título */
   h1 {
     font-size: 2rem;
-    margin-top: 20px;
+    margin-top: 1px;
   }
 }
 
@@ -149,3 +158,4 @@ footer {
     height: 90px;
   }
 }
+
