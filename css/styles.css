@@ -1,127 +1,148 @@
-/* Estilo general */
+/* 🟣 Estilos Generales */
 body {
-    background: linear-gradient(to bottom, #1E0F31, #2C1A4C);
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    text-align: center;
+  background: linear-gradient(to bottom, #1E0F31, #2C1A4C); /* Fondo degradado */
+  color: #ffffff; /* Color de texto blanco */
+  font-family: Arial, sans-serif; /* Fuente de texto */
+  text-align: center; /* Centra el texto */
+  margin: 0; /* Elimina márgenes por defecto */
+  padding: 0; /* Elimina padding por defecto */
+  padding-top: 80px; /* Deja espacio en la parte superior para el header fijo */
 }
 
-/* Encabezado */
+/* 🟣 Encabezado */
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+  display: flex; /* Usa flexbox para alinear los elementos */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  padding: 10px; /* Espacio interno */
+  position: fixed; /* Fija el encabezado en la parte superior */
+  top: 0; /* Posición en la parte superior */
+  left: 0; /* Alineado a la izquierda */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  background: rgba(30, 15, 49, 0.9); /* Fondo semitransparente */
+  z-index: 1000; /* Asegura que el encabezado quede por encima del contenido */
+  transition: top 0.3s ease-in-out; /* Suaviza el movimiento de aparecer/desaparecer */
 }
 
 .logo {
-    width: 120px;
-    height: auto;
+  width: 60px; /* Tamaño del logo */
+  height: auto; /* Mantiene la relación de aspecto */
 }
 
-/* Carrusel */
-.carousel-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 70px;
-    overflow: hidden;
-}
-
+/* 🟣 Carrusel */
 .carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 12px;
-    padding: 20px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Oculta la barra de desplazamiento en Firefox */
+  display: flex; /* Usa flexbox para alinear el contenido */
+  justify-content: center; /* Centra el carrusel horizontalmente */
+  align-items: center; /* Centra el carrusel verticalmente */
+  width: 100%; /* Ocupa todo el ancho */
+  margin: 20px auto; /* Espacio alrededor del carrusel */
+  max-width: 1200px; /* Limita el ancho máximo del carrusel en pantallas grandes */
 }
 
-.carousel::-webkit-scrollbar {
-    display: none; /* Oculta la barra de desplazamiento en Chrome/Safari */
+.carousel-container {
+  display: flex; /* Usa flexbox para organizar los elementos en línea */
+  flex-wrap: nowrap; /* No permite que los elementos se envuelvan */
+  overflow-x: auto; /* Permite el desplazamiento horizontal si hay muchas imágenes */
+  scroll-snap-type: x mandatory; /* Hace que el desplazamiento se "ajuste" a cada imagen */
+  padding: 20px; /* Espaciado interno */
+  gap: 15px; /* Espaciado entre las imágenes */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
 }
 
 .carousel-item {
-    flex: 0 0 80%;
-    max-width: 400px;
-    scroll-snap-align: start;
+  min-width: 60%; /* Cada imagen ocupa al menos el 60% del ancho del contenedor */
+  max-width: 80%; /* Limita el ancho máximo al 80% */
+  flex-shrink: 0; /* No permite que las imágenes se reduzcan de tamaño */
+  scroll-snap-align: center; /* Alinea cada imagen al centro */
+  transition: transform 0.3s ease-in-out; /* Suaviza el cambio cuando se aplica el zoom */
 }
 
 .carousel-item img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 30px;
+  width: 100%; /* Las imágenes ocupan el 100% del ancho del contenedor */
+  height: auto; /* Mantiene la relación de aspecto de la imagen */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transiciones suaves */
 }
 
-/* Sucursales */
+/* 🟣 Efecto de zoom al pasar el mouse sobre las imágenes */
+.carousel-item:hover img {
+  transform: scale(1.08); /* Aumenta el tamaño de la imagen en un 8% */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.7); /* Sombra más grande */
+}
+
+/* 🟣 Título */
+h1 {
+  font-size: 2.2rem; /* Tamaño de fuente del título */
+  margin-top: 10px; /* Espacio encima del título */
+}
+
+/* 🟣 Sucursales */
 .sucursales {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
+  display: grid; /* Usamos grid para distribuir las sucursales */
+  gap: 15px; /* Espaciado entre las sucursales */
+  justify-content: center; /* Centra el contenido dentro de la cuadrícula */
+  margin: 20px auto; /* Espacio alrededor de las sucursales */
+  max-width: 600px; /* Limita el ancho de las sucursales */
+  grid-template-columns: repeat(3, 1fr); /* En todas las pantallas, 3 sucursales por fila */
 }
 
+/* 🟣 Estilos individuales de las sucursales */
 .sucursal {
-    width: 120px;
-    height: 100px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
+  border-radius: 10px; /* Bordes redondeados */
+  overflow: hidden; /* Evita que las imágenes sobresalgan */
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4); /* Sombra */
+  transition: transform 0.2s ease; /* Transición suave al hacer hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+  display: flex; /* Usamos flexbox para centrar las imágenes */
+  align-items: center; /* Alinea la imagen verticalmente */
+  justify-content: center; /* Alinea la imagen horizontalmente */
+  width: 100%; /* Ocupa el 100% del espacio disponible */
+  aspect-ratio: 1 / 1; /* Hace que el contenedor sea cuadrado */
+  max-width: 150px; /* Limita el tamaño máximo */
 }
 
 .sucursal img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%; /* Las imágenes ocupan el 100% del contenedor */
+  height: 100%; /* Asegura que las imágenes cubran todo el contenedor */
+  object-fit: cover; /* Mantiene la proporción de las imágenes */
+  transition: transform 0.2s ease; /* Transición suave al hacer hover */
 }
 
-.sucursal:hover {
-    transform: scale(1.1);
+.sucursal img:hover {
+  transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
 }
 
-/* Pie de página */
+/* 🟣 Acomoda una sucursal sola al centro */
+.sucursales:has(.sucursal:nth-child(1):nth-last-child(1)) {
+  display: flex; /* Usa flexbox */
+  justify-content: center; /* Centra el único elemento */
+}
+
+/* 🟣 Pie de página */
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    text-align: center;
-    padding: 5px;
-    font-size: 0.8rem;
+  position: fixed; /* Fija el pie de página en la parte inferior */
+  bottom: 0; /* Posiciona el pie en la parte inferior */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  color: #fff; /* Texto blanco */
+  text-align: center; /* Centra el texto */
+  padding: 5px; /* Espaciado alrededor del texto */
+  font-size: 0.8rem; /* Tamaño de fuente pequeño */
 }
 
-/* Diseño Responsivo */
+/* 🟣 Carrusel en pantallas pequeñas */
 @media (max-width: 768px) {
-    .carousel-item {
-        flex: 0 0 75%;
-        max-width: 300px;
-    }
-
-    .sucursal {
-        width: 100px;
-        height: 90px;
-    }
+  .carousel-item {
+    min-width: 85%; /* Reduce el tamaño en pantallas pequeñas */
+    max-width: 90%; /* Limita el tamaño máximo en pantallas pequeñas */
+  }
 }
 
+/* 🟣 Carrusel en pantallas muy pequeñas */
 @media (max-width: 480px) {
-    .logo {
-        width: 80px;
-    }
-
-    .carousel-item {
-        flex: 0 0 70%;
-        max-width: 250px;
-    }
-
-    .sucursal {
-        width: 90px;
-        height: 80px;
-    }
+  .carousel-item {
+    min-width: 95%; /* En pantallas muy pequeñas, las imágenes ocupan el 95% */
+    max-width: 100%; /* Las imágenes se ajustan completamente al contenedor */
+  }
 }
